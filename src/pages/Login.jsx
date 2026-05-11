@@ -9,7 +9,10 @@ import eye from "../assets/eye.png";
 import eyeoff from "../assets/closed-eye.png";
 
 const Login = () => {
-  const { loginUser, googleLogin } = useAuth();
+  const auth = useAuth();
+
+const loginUser = auth?.loginUser;
+const googleLogin = auth?.googleLogin;
 
   const router = useRouter();
 

@@ -1,11 +1,23 @@
 "use client";
 
-import { useAuth } from "../context/AuthContext"; 
+import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 
 const Profile = () => {
-  const { user } = useAuth();
+
+  const auth = useAuth();
+
+  const user = auth?.user;
+
   const router = useRouter();
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
@@ -31,22 +43,31 @@ const Profile = () => {
         {/* Divider */}
         <div className="my-5 border-t"></div>
 
-        {/* Info Section */}
+        {/* Info */}
         <div className="text-left space-y-2 text-sm text-gray-700">
-          <p><span className="font-medium">Name:</span> {user?.displayName}</p>
-          <p><span className="font-medium">Email:</span> {user?.email}</p>
+
+          <p>
+            <span className="font-medium">Name:</span>{" "}
+            {user?.displayName}
+          </p>
+
+          <p>
+            <span className="font-medium">Email:</span>{" "}
+            {user?.email}
+          </p>
+
         </div>
 
-        {/* Update Button */}
+        {/* Button */}
         <button
           onClick={() => router.push("/update-profile")}
-          className="mt-6 w-full bg-green-600 text-white py-2 rounded-lg 
-          hover:bg-green-700 transition active:scale-95"
+          className="mt-6 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition active:scale-95"
         >
           Update Information
         </button>
 
       </div>
+
     </div>
   );
 };

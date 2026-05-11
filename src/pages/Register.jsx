@@ -9,7 +9,11 @@ import eye from "../assets/eye.png";
 import eyeoff from "../assets/closed-eye.png";
 
 const Register = () => {
-  const { registerUser, updateUser, logout } = useAuth();
+  const auth = useAuth();
+
+const registerUser = auth?.registerUser;
+const updateUser = auth?.updateUser;
+const logout = auth?.logout;
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
