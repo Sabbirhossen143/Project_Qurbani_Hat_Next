@@ -30,11 +30,11 @@ const Navbar = () => {
 
   return (
     <div className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-5xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="max-w-6xl mx-auto px-2 md:px-4 py-2 md:py-3 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-3">
 
         {/* Logo */}
         <Link href="/">
-          <img src="/images/logo.png" alt="logo" className="h-10" />
+          <img src="/images/logo.png" alt="logo" className="h-8 md:h-10" />
         </Link>
 
         {/* Menu */}
@@ -43,7 +43,7 @@ const Navbar = () => {
           {/* Home */}
           <Link
             href="/"
-            className={`px-2 py-1 rounded-md transition ${
+            className={`px-1.5 md:px-2 py-1 text-xs md:text-sm rounded-md transition ${
               pathname === "/"
                 ? "bg-green-700 text-white"
                 : "text-gray-700 hover:bg-green-100"
@@ -55,7 +55,7 @@ const Navbar = () => {
           {/* Animals */}
           <Link
             href="/animals"
-            className={`px-2 py-1 rounded-md transition ${
+            className={`px-1.5 md:px-2 py-1 text-xs md:text-sm rounded-md transition ${
               pathname === "/animals"
                 ? "bg-green-700 text-white"
                 : "text-gray-700 hover:bg-green-100"
@@ -69,7 +69,7 @@ const Navbar = () => {
               {/* Login */}
               <Link
                 href="/login"
-                className={`px-2 py-1 rounded-md transition ${
+                className={`px-1.5 md:px-2 py-1 text-xs md:text-sm rounded-md transition ${
                   pathname === "/login"
                     ? "bg-green-700 text-white"
                     : "text-gray-700 hover:bg-green-100"
@@ -81,9 +81,9 @@ const Navbar = () => {
               {/* Register */}
               <Link
                 href="/register"
-                className={`px-2 py-1 rounded-md transition ${
+                className={`px-1.5 md:px-2 py-1 text-xs md:text-sm rounded-md transition ${
                   pathname === "/register"
-                    ? "bg-green-600 text-white"
+                    ? "bg-green-700 text-white"
                     : "text-gray-700 hover:bg-green-100"
                 }`}
               >
