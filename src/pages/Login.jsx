@@ -42,7 +42,7 @@ const Login = () => {
     hideProgressBar: true,
     pauseOnHover: false,
     style: {
-      width: window.innerWidth < 768 ? "fit-content" : "300px",
+      width: window.innerWidth < 768 ? "220px" : "300px",
       maxWidth: "90%",
       borderRadius: "12px",
       padding: "10px 12px",
