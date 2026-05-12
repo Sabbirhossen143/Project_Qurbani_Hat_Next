@@ -53,7 +53,7 @@ const Animals = () => {
 
   <div className="max-w-6xl mx-auto px-4">
 
-    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl py-12 md:py-16">
+    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl py-8 md:py-16">
 
       <div className="text-center">
 
@@ -62,8 +62,8 @@ const Animals = () => {
           Choose Your Qurbani Animal
         </h1>
 
-        <p className="mt-3 text-gray-700 
-        text-sm sm:text-base md:text-lg max-w-xl mx-auto">
+        <p className="mt-2 text-gray-700 
+text-xs sm:text-base md:text-lg max-w-xl mx-auto px-2">
           Find the best cow for your sacrifice with trusted sellers and fair prices.
         </p>
 
@@ -75,13 +75,13 @@ const Animals = () => {
 
 </div>
 
-      <div className="max-w-6xl mx-auto px-4 mt-6">
+      <div className="max-w-6xl mx-auto px-4 mt-2 md:mt-6">
         <div className="flex flex-wrap gap-3 justify-center md:justify-start">
           {types.map((type, i) => (
             <button
               key={i}
               onClick={() => setSelectedType(type)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition 
+              className={`px-2.5 md:px-4 py-1 md:py-2 rounded-full text-[10px] md:text-sm font-medium transition  
               ${
                 selectedType === type
                   ? "bg-green-600 text-white shadow"
@@ -95,11 +95,11 @@ const Animals = () => {
       </div>
 
       {/* 🔥 MAIN CONTENT */}
-      <div className="max-w-6xl mx-auto px-4 py-10">
+      <div className="max-w-6xl mx-auto px-4 py-5 md:py-10">
 
         {/* HEADER + SORT */}
         <div className="flex justify-between mb-6 flex-wrap gap-3">
-          <h2 className="text-xl md:text-2xl font-bold">
+          <h2 className="text-base md:text-2xl font-bold">
             {selectedType === "All" ? "All Animals" : selectedType}
           </h2>
 
@@ -108,7 +108,7 @@ const Animals = () => {
 
             <button
               onClick={() => setOpenSort(!openSort)}
-              className="px-4 py-2 rounded-lg border bg-white shadow-sm text-sm hover:border-green-400"
+              className="px-2.5 md:px-4 py-1 md:py-2 rounded-lg border bg-white shadow-sm text-[10px] md:text-sm hover:border-green-400"
             >
               {sort === "low"
                 ? "Low → High"
@@ -118,14 +118,14 @@ const Animals = () => {
             </button>
 
             {openSort && (
-  <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border py-2 z-50 text-sm">
+  <div className="absolute right-0 mt-2 w-32 md:w-40 bg-white rounded-lg shadow-lg border py-1.5 z-50 text-[10px] md:text-sm">
 
     <div
       onClick={() => {
         setSort("");
         setOpenSort(false);
       }}
-      className="block px-4 py-2 hover:bg-green-600 hover:text-white cursor-pointer"
+      className="block px-3 md:px-4 py-1.5 md:py-2 hover:bg-green-600 hover:text-white cursor-pointer"
     >
       Default
     </div>

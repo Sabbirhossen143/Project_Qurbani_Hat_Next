@@ -81,7 +81,7 @@ const Login = () => {
 
       <form
         onSubmit={handleLogin}
-        className="bg-white w-full max-w-[320px] md:max-w-md p-2.5 md:p-8 rounded-2xl shadow-md"
+        className="bg-white w-full max-w-[350px] md:max-w-md p-2.5 md:p-8 rounded-2xl shadow-md"
       >
 
         {/* Title */}
@@ -110,7 +110,7 @@ const Login = () => {
 
           <span
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-5 md:right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+            className="absolute right-6 md:right-5 top-1/2 -translate-y-1/2 cursor-pointer"
           >
 
             <img

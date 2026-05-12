@@ -66,19 +66,19 @@ const Details = () => {
           {/* Info */}
           <div>
 
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-lg md:text-2xl font-semibold">
               {animal.name}
             </h2>
 
-            <p className="text-green-700 text-xl mt-2">
+            <p className="text-green-700 text-base md:text-xl mt-1 md:mt-2">
               ৳ {animal.price}
             </p>
 
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm md:text-sm text-gray-600 leading-relaxed">
               {animal.description}
             </p>
 
-            <ul className="mt-4 text-sm space-y-1">
+            <ul className="mt-3 text-xs md:text-sm space-y-1">
               <li>Breed: {animal.breed}</li>
               <li>Weight: {animal.weight} kg</li>
               <li>Age: {animal.age} years</li>
@@ -92,36 +92,38 @@ const Details = () => {
         {/* Booking */}
         <form
           onSubmit={handleSubmit}
-          className="mt-10 max-w-md grid gap-4"
+          className="mt-6 md:mt-10 max-w-md bg-white border border-gray-200 rounded-2xl shadow-lg p-4 md:p-6 grid gap-3 md:gap-4"
         >
-
+<h3 className="text-base md:text-xl font-semibold text-green-700 text-center">
+  Booking Form
+</h3>
           <input
-            className="border p-2"
+            className="border border-gray-300 rounded-lg px-3 py-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600 transition"
             placeholder="Name"
             required
           />
 
           <input
-            className="border p-2"
+            className="border border-gray-300 rounded-lg px-3 py-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600 transition"
             placeholder="Email"
             required
           />
 
           <input
-            className="border p-2"
+            className="border border-gray-300 rounded-lg px-3 py-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600 transition"
             placeholder="Phone"
             required
           />
 
           <input
-            className="border p-2"
+            className="border border-gray-300 rounded-lg px-3 py-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600 transition"
             placeholder="Address"
             required
           />
 
-          <button className="bg-green-700 text-white py-2">
-            Book Now
-          </button>
+          <button className="bg-green-700 hover:bg-green-800 text-white py-2.5 rounded-lg text-sm md:text-base font-medium transition active:scale-95">
+  Book Now
+</button>
 
         </form>
 

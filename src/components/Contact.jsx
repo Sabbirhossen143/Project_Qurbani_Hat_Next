@@ -13,7 +13,7 @@ const Contact = () => {
     const email = form.email.value;
     const message = form.message.value;
 
-    // simple validation
+    // simple validation asdd sa
     if (!name || !email || !message) {
       toast.error("Please fill all fields");
       return;
@@ -25,14 +25,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
+    <div className="max-w-5xl mx-auto px-4 py-10 md:py-14">
       
       {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-800">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-10 text-gray-800">
         Contact Us
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
         
         {/* LEFT: Info */}
         <div>
@@ -70,36 +70,36 @@ const Contact = () => {
         {/* RIGHT: Form */}
         <form 
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-xl shadow-md space-y-4">
+        className="bg-white border border-gray-200 p-4 md:p-5 rounded-2xl shadow-lg space-y-3 md:space-y-4 max-w-md w-full">
           
           <input
   name="name"
   type="text"
   placeholder="Your Name"
-  className="w-full px-4 py-3 border rounded-lg
-  focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
+  className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border rounded-lg
+focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
 />
 
 <input
   name="email"
   type="email"
   placeholder="Your Email"
-  className="w-full px-4 py-3 border rounded-lg
-  focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
+  className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border rounded-lg
+focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
 />
 
 <textarea
   name="message"
   rows="4"
   placeholder="Your Message"
-  className="w-full px-4 py-3 border rounded-lg
-  focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
+  className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border rounded-lg
+focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
 ></textarea>
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-3 rounded-lg font-medium 
-            hover:bg-green-700 transition duration-200 active:scale-95"
+            className="w-full bg-green-600 text-white py-2.5 md:py-3 text-sm md:text-base rounded-lg font-medium 
+hover:bg-green-700 transition duration-200 active:scale-95"
           >
             Send Message
           </button>

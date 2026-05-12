@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const AnimalCard = ({ animal }) => {
   return (
-  <div className="bg-white aspect-[4/3] rounded-lg shadow-md p-3 
+  <div className="bg-white aspect-[4/3] rounded-lg shadow-md p-3 border border-transparent
 transition-all duration-300 ease-in-out 
-hover:scale-105 hover:shadow-xl cursor-pointer">
+hover:border-green-600 hover:shadow-lg cursor-pointer">
       <img src={animal.image} className="w-full h-48 sm:h-40 object-cover rounded transition duration-300" />
 
       <div className="mt-3 flex justify-between items-center">
@@ -19,8 +19,8 @@ hover:scale-105 hover:shadow-xl cursor-pointer">
 
       <Link
         href={`/details/${animal.id}`}
-        className="mt-3 block w-full text-center bg-green-600 text-white py-2 rounded-md 
-  hover:bg-green-700 transition duration-200 active:scale-95"
+        className="mt-2 md:mt-3 block w-full text-center bg-green-600 text-white py-1.5 md:py-2 text-sm md:text-sm rounded-md 
+hover:bg-green-700 transition duration-200 active:scale-95"
       >
          See Details
       </Link>
