@@ -30,18 +30,18 @@ const TopBreeds = () => {
         Top Breeds
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {breeds.map((b, i) => (
           <div
             key={i}
-            className="bg-white p-6 rounded-2xl shadow-md 
-            hover:shadow-xl transition duration-300 hover:-translate-y-1 border"
+            className="bg-white p-3 md:p-6 rounded-2xl shadow-md 
+hover:shadow-xl transition duration-300 hover:-translate-y-1 border"
           >
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+            <h3 className="text-sm md:text-lg font-semibold text-gray-800 mb-1 md:mb-2">
               {b.name}
             </h3>
 
-            <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
+            <span className="text-[10px] md:text-xs bg-green-100 text-green-700 px-2 md:px-3 py-0.5 md:py-1 rounded-full">
               {b.type}
             </span>
           </div>

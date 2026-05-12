@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
 import { useState, useRef, useEffect } from "react";
-import logo from "../assets/logo.png";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -14,6 +14,7 @@ const Navbar = () => {
   const menuRef = useRef();
 
   const pathname = usePathname();
+  const router = useRouter();
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -27,6 +28,40 @@ const Navbar = () => {
 
     return () => document.removeEventListener("click", handler);
   }, []);
+
+
+  const handleLogout = async () => {
+
+  try {
+
+    await logout();
+
+    toast.success("Logged out successfully", {
+      position: "top-center",
+      autoClose: 1800,
+      hideProgressBar: true,
+      pauseOnHover: false,
+      style: {
+        width: window.innerWidth < 768 ? "220px" : "280px",
+        maxWidth: "90%",
+        fontSize: window.innerWidth < 768 ? "12px" : "13px",
+        borderRadius: "12px",
+        padding: "10px 12px",
+        marginTop: window.innerWidth < 768 ? "95px" : "80px",
+        textAlign: "left",
+        whiteSpace: "nowrap",
+      },
+    });
+
+    router.push("/");
+
+  } catch {
+
+    toast.error("Logout Failed");
+
+  }
+};
+
 
   return (
     <div className="bg-white shadow-sm sticky top-0 z-50">
@@ -106,22 +141,22 @@ const Navbar = () => {
 
               {/* Dropdown */}
               {open && (
-                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border py-2 z-50 text-sm">
+                <div className="absolute right-0 mt-2 w-32 md:w-40 bg-white rounded-xl shadow-lg border py-1.5 md:py-2 z-50">
 
                   <Link
                     href="/profile"
                     onClick={() => setOpen(false)}
-                    className="block px-4 py-2 hover:bg-green-600 hover:text-white transition"
+                    className="block px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm hover:bg-green-600 hover:text-white transition"
                   >
                     My Profile
                   </Link>
 
                   <button
                     onClick={() => {
-                      logout();
-                      setOpen(false);
-                    }}
-                    className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-700 hover:text-white transition"
+  handleLogout();
+  setOpen(false);
+}}
+                    className="w-full text-left px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm text-red-600 hover:bg-red-700 hover:text-white transition"
                   >
                     Logout
                   </button>

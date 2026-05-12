@@ -46,7 +46,22 @@ const Details = () => {
 
     e.target.reset();
 
-    toast.success("Booking Successful!");
+    toast.success("Booking Successful!", {
+  position: "top-center",
+  autoClose: 1800,
+  hideProgressBar: true,
+  pauseOnHover: false,
+  style: {
+    width: window.innerWidth < 768 ? "260px" : "280px",
+    maxWidth: "90%",
+    fontSize: window.innerWidth < 768 ? "12px" : "13px",
+    borderRadius: "12px",
+    padding: "10px 12px",
+    marginTop: window.innerWidth < 768 ? "95px" : "80px",
+    textAlign: "left",
+    whiteSpace: "nowrap",
+  },
+});
   };
 
   return (
