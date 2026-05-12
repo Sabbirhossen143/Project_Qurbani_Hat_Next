@@ -22,7 +22,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
 
-      <div className="bg-white max-w-md w-full p-8 rounded-2xl shadow-md text-center">
+      <div className="bg-white max-w-[320px] md:max-w-md w-full p-4 md:p-8 rounded-2xl shadow-md text-center">
 
         {/* Profile Image */}
         <img
@@ -31,12 +31,12 @@ const Profile = () => {
         />
 
         {/* Name */}
-        <h2 className="mt-4 text-xl font-semibold text-gray-800">
+        <h2 className="mt-3 md:mt-4 text-base md:text-xl font-semibold text-gray-800">
           {user?.displayName || "No Name"}
         </h2>
 
         {/* Email */}
-        <p className="text-gray-500 text-sm mt-1">
+        <p className="text-gray-500 text-xs md:text-sm mt-1">
           {user?.email}
         </p>
 
@@ -44,7 +44,7 @@ const Profile = () => {
         <div className="my-5 border-t"></div>
 
         {/* Info */}
-        <div className="text-left space-y-2 text-sm text-gray-700">
+        <div className="text-left space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-700">
 
           <p>
             <span className="font-medium">Name:</span>{" "}
@@ -61,7 +61,7 @@ const Profile = () => {
         {/* Button */}
         <button
           onClick={() => router.push("/update-profile")}
-          className="mt-6 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition active:scale-95"
+          className="mt-5 md:mt-6 w-full bg-green-600 text-white py-1.5 md:py-2 text-sm md:text-base rounded-lg hover:bg-green-700 transition active:scale-95"
         >
           Update Information
         </button>
