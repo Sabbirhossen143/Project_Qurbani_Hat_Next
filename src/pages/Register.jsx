@@ -43,11 +43,28 @@ const Register = () => {
 
         await updateUser(name, photo);
 
-        await logout();
+await logout();
 
-        toast.success("Registration Successful");
+toast.success("Registration Successful", {
+  position: "top-center",
+  autoClose: 1200,
+  hideProgressBar: true,
+  pauseOnHover: false,
+  style: {
+    width: window.innerWidth < 768 ? "fit-content" : "320px",
+    maxWidth: "90%",
+    fontSize: window.innerWidth < 768 ? "12px" : "13px",
+    borderRadius: "12px",
+    padding: "10px 12px",
+    marginTop: window.innerWidth < 768 ? "95px" : "80px",
+    textAlign: "center",
+    whiteSpace: "nowrap",
+  },
+});
 
-        router.push("/login");
+setTimeout(() => {
+  router.push("/login");
+}, 1200);
 
       })
 

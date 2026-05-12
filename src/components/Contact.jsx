@@ -19,7 +19,23 @@ const Contact = () => {
       return;
     }
 
-    toast.success("Thanks! We’ll get back to you soon.");
+    toast.success("Thanks! Message sent successfully.", {
+  position: "top-center",
+  autoClose: 2200,
+  hideProgressBar: true,
+  pauseOnHover: false,
+  style: {
+  width: window.innerWidth < 768 ? "fit-content" : "360px",
+  maxWidth: "90%",
+  fontSize: window.innerWidth < 768 ? "12px" : "13px",
+  borderRadius: "12px",
+  padding: "10px 12px",
+  marginTop: window.innerWidth < 768 ? "110px" : "80px",
+  textAlign: "center",
+  whiteSpace: "nowrap",
+  gap: "6px",
+},
+});
 
     form.reset(); 
   };

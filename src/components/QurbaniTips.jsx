@@ -22,9 +22,9 @@ const QurbaniTips = () => {
         {tips.map((tip, i) => (
           <div
             key={i}
-            className="bg-white p-6 rounded-xl shadow-sm 
-            hover:shadow-lg transition duration-300 
-            flex items-start gap-3"
+            className="bg-white p-3 md:p-6 rounded-xl shadow-sm 
+hover:shadow-lg transition duration-300 
+flex items-start gap-2 md:gap-3"
           >
             <span className="text-green-600 text-xl">✔</span>
 

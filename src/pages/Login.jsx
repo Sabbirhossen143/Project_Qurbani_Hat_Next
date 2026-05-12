@@ -26,17 +26,30 @@ const Login = () => {
         const name = res.user.displayName || "User";
 
         toast.success(
-          <div>
-            <p className="font-semibold text-center">
-              <span className="text-gray-700">Hi, </span>
-              <span className="text-green-600">{name}</span>
-            </p>
+  <div className="text-center leading-tight">
+    <p className="font-semibold text-[12px] md:text-sm">
+      <span className="text-gray-700">Hi, </span>
+      <span className="text-green-600">{name}</span>
+    </p>
 
-            <p className="text-sm text-gray-700">
-              Welcome to our Qurbani Hat !
-            </p>
-          </div>
-        );
+    <p className="text-[11px] md:text-xs text-gray-700 mt-1">
+      Welcome to Qurbani Hat!
+    </p>
+  </div>,
+  {
+    position: "top-center",
+    autoClose: 1800,
+    hideProgressBar: true,
+    pauseOnHover: false,
+    style: {
+      width: window.innerWidth < 768 ? "fit-content" : "300px",
+      maxWidth: "90%",
+      borderRadius: "12px",
+      padding: "10px 12px",
+      marginTop: window.innerWidth < 768 ? "95px" : "80px",
+    },
+  }
+);
 
         router.push("/");
       })
